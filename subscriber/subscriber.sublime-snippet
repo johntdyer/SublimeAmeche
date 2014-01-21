@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+ameche.on('subscribe', function(event) {
+  var subscriber = event.subscriber;
+  subscriber.on('call:incoming', function(event) {
+    console.log('Incoming call', event.call);
+  })
+  .on('call:outgoing', function(event) {
+    console.log('Outgoing call', event.call);
+  })
+  .on('call:end', function(event) {
+      console.log('Call ended', event.call);
+  })
+  .on('call:connected', function(event) {
+    console.log('Call connected', event.call);
+  });
+});]]></content>
+    <description>subscribe object</description>
+    <tabTrigger>subscribe</tabTrigger>
+</snippet>
