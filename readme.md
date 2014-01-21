@@ -1,4 +1,4 @@
-AmcheChef
+SublimeAmeche
 ===========
 
 A Sublime Text 2 Package for authoring Ameche related applications.
