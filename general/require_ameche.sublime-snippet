@@ -1,9 +1,9 @@
 <snippet>
-    <content><![CDATA[
-var ameche = require('ameche');
-]]></content>
-    <description>require ameche</description>
-    <tabTrigger>require</tabTrigger>
+  <content><![CDATA[
+var ameche = require('ameche');]]>
+  </content>
+  <description>require ameche</description>
+  <tabTrigger>require</tabTrigger>
 </snippet>
 
 
