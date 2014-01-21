@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+.on('call:outgoing', function(event) {
+  console.log('Outgoing call', event.call);
+})
+]]></content>
+    <description>.on('call:outgoing')</description>
+    <tabTrigger>.on</tabTrigger>
+</snippet>

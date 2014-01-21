@@ -1,7 +1,7 @@
 <snippet>
   <content><![CDATA[
-on('end', function(event) {
-    console.log('Playback of ' + util.inspect(event.say.tokens) + ' complete');
+.on('end', function(event) {
+  console.log('Playback of ' + util.inspect(event.say.tokens) + ' complete');
 });
 ]]></content>
     <description>on('end')</description>
