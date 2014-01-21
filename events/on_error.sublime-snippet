@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+on('error', function(event) {
+    console.log('$1 ' + event.error);
+});
+]]></content>
+    <description>on error</description>
+    <tabTrigger>.on e</tabTrigger>
+</snippet>
