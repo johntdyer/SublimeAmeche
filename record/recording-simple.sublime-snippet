@@ -1,0 +1,30 @@
+<snippet>
+    <content><![CDATA[
+var recording = call.record({
+  format: 'mp3'}',
+  startBeep: ${2:true},
+  startPaused: ${3:false},
+  maxDuration: ${4:500},
+  initialTimeout: ${5:10},
+  finalTimeout: ${6:30},
+  expireAfter: ${7:6000},
+  expireAfterFetch: ${8:true}
+}).
+on('start', function(event) {
+    console.log('Recording has started');
+}).
+on('end', function(event) {
+    // save recording to a file
+    var istream = event.recording.createReadStream();
+    var ostream = fs.createWriteStream('${9:/path/to/file}');
+    istream.pipe(ostream);
+}).
+on('error', function(event) {
+    console.log('Error while recording: ' + event.error);
+});
+]]></content>
+    <description>record full</description>
+    <tabTrigger>record</tabTrigger>
+</snippet>
+
+

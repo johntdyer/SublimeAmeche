@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+var ask = connection.ask("${1:[5 DIGITS]}", {
+  mode: 'dtmf',
+  terminator: '#',
+  initialTimeout: 3,
+  interDigitTimeout: 3
+}).
+
+ask.on('end', function(event) {
+  if (event.result) {
+    console.log('Result: ' + event.result + '. Utterance: ' + event.utterance);
+  } else {
+    var cause = event.cause;
+
+    if (cause == 'nomatch') {
+      console.log("Could not recognize user's input");
+    } else if (cause == 'noinput') {
+      console.log('The user did not type anything');
+    }
+  }
+});
+
+ask.on('error', function(event) {
+  console.log('Error while recording: ' + event.error);
+});]]></content>
+    <description>ask</description>
+    <tabTrigger>ask</tabTrigger>
+</snippet>

@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[
+call.on('connection:created', function(event) {
+  var ${1:conn} = event.connection;
+  console.log('Connection with state ' + ${1:conn}.state + ' has ringlist ' + ${1:conn}.ringlist);
+
+  ${1:conn}.on('ringing', function(event) {
+    console.log('Connection is ringing address ' + event.address);
+  })
+  .on('connected', function(event) {
+    console.log('Connection established to ' + event.address);
+
+    // We're connected, now hang up
+    ${1:conn}.disconnect();
+  })
+  .on('disconnected', function(event) {
+    console.log('Connection broken to ' + ${1:conn}.address);
+  })
+  .on('error', function(event) {
+    console.log('Connection had error ' + event.error);
+  });
+});
+]]></content>
+    <description>call - connection:created</description>
+    <tabTrigger>ameche.connnection</tabTrigger>
+</snippet>
